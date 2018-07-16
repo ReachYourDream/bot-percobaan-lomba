@@ -5,6 +5,7 @@
   "main": "bot.js",
   "author": "YOUR-NAME-HERE",
   "dependencies": {
-    "@line/bot-sdk": "^6.1.0"
+    "@line/bot-sdk": "^6.1.0",
+    "express": "^4.16.3"
   }
 }
