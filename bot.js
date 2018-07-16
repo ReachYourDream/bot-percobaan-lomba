@@ -1,10 +1,6 @@
 'use strict';
 
 const line = require('@line/bot-sdk');
-const express = require('express');
-const https = require('https');
-const http = require('http');
-var timeout = require('connect-timeout');
 var echo = { type: 'text', text: 'Untuk sementara fitur yang bisa digunakan hanya: \n\
   dosen(spasi)nama dosen\n\
   Contoh: Dosen Rudi' };
@@ -75,6 +71,7 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
+  console.log('woi');
   const insert_text = String(event.message.text);
   echo.text = 'Coba test';
   return client.replyMessage(event.replyToken,echo);
