@@ -29,7 +29,7 @@ function handleEvent(event) {
   }
   var echo = {type: 'text', text: 'coba'};
   const insert_text = String(event.message.text);
-  if(insert_text.toLowerCase()=="Sakit"){
+  if(insert_text.toLowerCase()=="sakit"){
     echo.text = "Sabar ya";
   }
   console.log('woi');
