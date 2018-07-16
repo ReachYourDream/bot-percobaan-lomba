@@ -49,7 +49,7 @@ var echo = { type: 'text', text: 'Untuk sementara fitur yang bisa digunakan hany
         ]
       }
     ]
-  }}
+  }};
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
