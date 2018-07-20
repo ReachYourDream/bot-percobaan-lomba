@@ -25,8 +25,6 @@ function handleEvent(event) {
   console.log(event);
   if(event.message.type =='image'){
     const stream = client.getMessageContent(event.message.id);
-    stream.on('error', (err) => {
-      console.log(err.message);});
     console.log('gambar: ' + stream);
     return client.replyMessage(event.replyToken,stream);
   }
