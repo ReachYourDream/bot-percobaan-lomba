@@ -27,7 +27,7 @@ function handleEvent(event) {
     var id_gambar = event.message.id;
     var gambar = {type:'image'};
     gambar.id= id_gambar;
-    console.log('gambar: ' + $gambar);
+    console.log('gambar: ' + gambar);
     return client.replyMessage(event.replyToken,gambar);
   }
 	if (event.type !== 'message' || event.message.type !== 'text') {
