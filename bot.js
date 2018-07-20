@@ -24,10 +24,10 @@ app.post('/callback', line.middleware(config), (req, res) => {
 function handleEvent(event) {
   console.log(event);
   if(event.message.type =='image'){
-    var id_gambar = event.message.id;
-    var gambar = {type:'image'};
-    gambar.id= id_gambar;
-    console.log('gambar: ' + gambar);
+    const stream = client.getMessageContent(messageId);
+    stream.on('error', (err) => {
+      console.log(err.message);});
+    console.log('gambar: ' + stream);
     return client.replyMessage(event.replyToken,gambar);
   }
 	if (event.type !== 'message' || event.message.type !== 'text') {
