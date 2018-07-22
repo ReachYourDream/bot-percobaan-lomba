@@ -71,7 +71,7 @@ function handleEvent(event) {
     var echo = {type: 'text', text : "Anda sedang berada di kota/kabupaten apa?"};
     return client.replyMessage(event.replyToken,echo);
   }
-  if(kalimat.toLowerCase().length() > 10){
+  if(kalimat.toLowerCase().length > 10){
     var echo ={type: 'text', text: "Laporanmu Lyana terima, terima kasih :)"};
     return client.replyMessage(event.replyToken,echo);
   }
