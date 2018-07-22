@@ -21,31 +21,57 @@ app.post('/callback', line.middleware(config), (req, res) => {
     });
 });
 
+var kotak awal = {
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "https://lh3.googleusercontent.com/F9p5XX1LLiC43yf4sY82jB0te64uLG68q0053RfD3bSWGiQcEg23omhDy_EHPTTY-SrRflM0HQUS5D7yrL3pkgVQDmJs20rjlaeGGKUyuo7-4MuwDdOS_To4t2V1c5Z7dhZJGvPmuQuRzFOpIdOOMT_sUOv2HAvZ-rX21iv7MhILBH5Zi50CUN0QnvqnYtaX6jrWjutEo4wQYiUbMUEFuz9Gg7iX8hD8khPL36qIS9BctdfMVOo5rZpJnSfIIyOvIOVW5C08Oqd0LYV4V_qHBChGQ3E6tnoj4cStx5hBEnL2Dz2a4RUhhG7CyYy1qBjlcMI53OZjG_Tb1aPAu-v7mqXzrOgPH012mOaXK7z5rXoryzd7eMHMdO7HyfQDbj7boyoXDvO03rW_E1kbqyB9vFPevuKThLmMUwH2YP4e8w22Bkfywqny6__hlospydM0OPqxPz0NlQFQcRFhMHTIWN0R-uXRpkKBnmKvQi1QbKOZu1cmVkA1FiFQMY0eHBjfTIgSctCQVOgprOKXMAfgX8RiMqfXtIUA-98xlvddPszlR-ItcPSKycF0cQVF5AgY=w1366-h664",
+        "title": "Layanan Pengaduan Masyarakat",
+        "text": "Ada keluhan? Laporkan saja",
+        "actions": [
+          {
+            "type": "message",
+            "label": "Lapor",
+            "text": "Lapor"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://lh3.googleusercontent.com/pEYhu0J-HGNNs9nXa62WVHMV2JSVy9CCp63fVmihaKAFCkUAxhUMFxG_Ql0AaqE5_rmZsbFUoLrNmCNAij5E7j0B-7zpObzrNN24u-Zh3NZcL-_JAlYMZpiol5jhcr0yac4sy8lPZFwJEb50CuCmuujNTYmBWJP64wByTASLpOyfq_4ezzatgYylkqYTHehujY7OwUD8bQP6Xrkakk1vtREGCdcOPJxWmEZinWcZ7Ei-enTZuBRG85pVibGEj_1Bgw7jTGvgyxZDkb3D01FWqBOdleQdfsiKiVQpyOHgiYsQH1U25WAaZxLmiItgPjsyxbIpiYLNstJqNpWKguuuFrjO6LYTgruBE5ZVKOOfDPE8lAAccyIWey6UUnro2-oAXpWwtJtrQrjh1e-vEIH76Kg6-2wGixnteeUNmza3NQkFzWaOAV37yIetUyNjXIzh8l59v-krDJG__Z-7ZYtkAGzOsvsQ3xdpG7LkS9KSaIf1iePtBNsGbHmIRQO8e8wmV_amo_jTWf2y88dmIp_D6dLQQyAclqEVeFCKELc5MzwbEO6I6RY8gfraLmD3fDZF=w1366-h664",
+        "title": "Informasi Lokasi Wisata",
+        "text": "Butuh Informasi lokasi wisata?",
+        "actions": [
+          {
+            "type": "message",
+            "label": "Klik disini",
+            "text": "Informasi"
+          }
+        ]
+      }
+    ]
+  }
+};
+
 function handleEvent(event) {
   console.log(event);
-  if(event.message.type =='image'){
-    const stream = client.getMessageContent(event.message.id);
-    console.log('gambar: ' + stream);
-    return client.replyMessage(event.replyToken,stream);
-  }
 	if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
-  var echo = {type: 'text', text: 'coba'};
-  const insert_text = String(event.message.text);
-  if(insert_text.toLowerCase()=="sakit"){
-    echo.text = "Sabar ya";
-  }
   console.log('woi');
   // echo.text = 'Coba test';
-  return client.replyMessage(event.replyToken,echo);
+  return client.replyMessage(event.replyToken,kotak_awal);
 }
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
+
 
 // { type: 'message',
 // 2018-07-16T14:18:15.611959+00:00 app[web.1]:   replyToken: 'bcace659aaf3411ea394051378170b63',
