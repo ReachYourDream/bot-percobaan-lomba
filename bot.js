@@ -57,14 +57,20 @@ var kotak_awal = {
 };
 
 function handleEvent(event) {
-  console.log(event);
 	if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
-    return Promise.resolve(null);
+    return client.replyMessage(event.replyToken,kotak_awal);
   }
-  console.log('woi');
+  var kalimat = event.message.text;
+
+  if(kalimat.toLowerCase() == lapor){
+    var echo = {type: 'text', text = 'Silahkan kirimkan detail laporan anda'};
+    return client.replyMessage(event.replyToken,echo);
+  }
+  if(kalimat.toLowerCase() == informasi){}
+    var echo = {type: 'text', text = 'Anda sedang berada di kota/kabupaten apa?'};
   // echo.text = 'Coba test';
-  return client.replyMessage(event.replyToken,kotak_awal);
+  return client.replyMessage(event.replyToken,echo);
 }
 
 const port = process.env.PORT || 3000;
