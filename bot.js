@@ -64,11 +64,11 @@ function handleEvent(event) {
   var kalimat = event.message.text;
 
   if(kalimat.toLowerCase() == lapor){
-    var echo = {type: 'text', text = 'Silahkan kirimkan detail laporan anda'};
+    var echo = {type: 'text', text : "Silahkan kirimkan detail laporan anda"};
     return client.replyMessage(event.replyToken,echo);
   }
   if(kalimat.toLowerCase() == informasi){}
-    var echo = {type: 'text', text = 'Anda sedang berada di kota/kabupaten apa?'};
+    var echo = {type: 'text', text : "Anda sedang berada di kota/kabupaten apa?"};
   // echo.text = 'Coba test';
   return client.replyMessage(event.replyToken,echo);
 }
