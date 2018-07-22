@@ -71,6 +71,17 @@ function handleEvent(event) {
     var echo = {type: 'text', text : "Anda sedang berada di kota/kabupaten apa?"};
     return client.replyMessage(event.replyToken,echo);
   }
+  if(kalimat.toLowerCase().length() > 10){
+    var echo ={type: 'text', text: "Laporanmu Lyana terima, terima kasih :)"};
+    return client.replyMessage(event.replyToken,echo);
+  }
+  if(kalimat.toLowerCase() == 'malang'){
+    var echo = {
+      "type": "text",
+      "text": "1. Batu Night Spectacular (HTM: Rp50.000)\n2. Jatim Park 1 (HTM: Rp60.000)\n3. Jatim Park 2 (HTM: Rp50.000)\n4. Jatim Park 3 (HTM: Rp80.000)"
+    };
+    return client.replyMessage(event.replyToken,echo);
+  }
   // echo.text = 'Coba test';
   return client.replyMessage(event.replyToken,kotak_awal);
 }
