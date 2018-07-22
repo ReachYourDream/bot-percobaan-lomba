@@ -21,7 +21,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
     });
 });
 
-var kotak awal = {
+var kotak_awal = {
   "type": "template",
   "altText": "this is a carousel template",
   "template": {
