@@ -69,6 +69,7 @@ function handleEvent(event) {
   }
   if(kalimat.toLowerCase() == "informasi"){
     var echo = {type: 'text', text : "Anda sedang berada di kota/kabupaten apa?"};
+    return client.replyMessage(event.replyToken,echo);
   }
   // echo.text = 'Coba test';
   return client.replyMessage(event.replyToken,kotak_awal);
